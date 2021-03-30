@@ -30,8 +30,15 @@ function inOrderArray(root, finalarr = []) {
 // Implement a function that takes the root of a Binary Tree
 // and returns an array containing the values from a post-order
 // traversal.
-function postOrderArray(root) {
-    // Your code here
+function postOrderArray(root, finalArr = []) {
+    if (root === null) {
+        return finalArr
+    }
+    postOrderArray(root.left, finalArr)
+    postOrderArray(root.right, finalArr)
+    finalArr.push(root.val)
+
+    return finalArr
 }
 
 
