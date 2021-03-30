@@ -16,8 +16,15 @@ function preOrderArray(root, finalarr = []) {
 // Implement a function that takes the root of a Binary Tree
 // and returns an array containing the values from an in-order
 // traversal.
-function inOrderArray(root) {
+function inOrderArray(root, finalarr = []) {
     // Your code here
+    if (root === null) {
+        return finalarr;
+    }
+    inOrderArray(root.left, finalarr);
+    finalarr.push(root.val);
+    inOrderArray(root.right, finalarr);
+    return finalarr
 }
 
 // Implement a function that takes the root of a Binary Tree
