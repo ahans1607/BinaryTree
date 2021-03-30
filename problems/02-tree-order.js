@@ -21,14 +21,10 @@ function inOrderArray(root, finalarr = []) {
     if (root === null) {
         return finalarr;
     }
-
     inOrderArray(root.left, finalarr);
     finalarr.push(root.val);
-    
     inOrderArray(root.right, finalarr);
-
     return finalarr
-
 }
 
 // Implement a function that takes the root of a Binary Tree
